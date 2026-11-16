@@ -9,151 +9,236 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script>
+    // Apply the saved or system theme before first paint to avoid a flash.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) { }
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 
   <title>Demitries Baskhara | Software Developer</title>
 </head>
 
 <body>
-  <div class="blob blob-1" aria-hidden="true"></div>
-  <div class="blob blob-2" aria-hidden="true"></div>
-
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand">Demitries Baskhara</a>
+      <a href="#home" class="logo" aria-label="Demitries Baskhara, home">DB</a>
       <nav class="site-nav" aria-label="Main">
-        <a href="#skills">Skills</a>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        </svg>
+      </button>
     </div>
   </header>
 
-  <main id="top">
+  <main id="home">
     <!-- Hero -->
     <section class="hero">
-      <div class="orbit-container orbit-outer" aria-hidden="true">
-        <div class="orbiting-object">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none"
-            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hello">Hello there, my name is</p>
+          <h1 class="hero-name">
+            <span class="name-first">Demitries</span>
+            <span class="name-last">Baskhara</span>
+          </h1>
+          <p class="hero-role">Software Developer</p>
+          <p class="hero-summary">
+            I build web applications backed by solid database design, using Python, full-stack web tools and
+            AI integration to make software that is fast, reliable and easy to use.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View projects</a>
+            <a href="https://www.linkedin.com/in/demitries-baskhara-632bb5268" class="btn btn-ghost" target="_blank"
+              rel="noopener">LinkedIn</a>
+          </div>
         </div>
-      </div>
-      <div class="orbit-container orbit-inner" aria-hidden="true">
-        <div class="orbiting-object orbiting-terminal">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none"
-            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="4 17 10 11 4 5"></polyline>
-            <line x1="12" y1="19" x2="20" y2="19"></line>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-glow"></div>
+          <svg class="art-svg" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
+            <!-- Browser window -->
+            <rect x="40" y="50" width="400" height="280" rx="18" class="a-window" />
+            <rect x="40" y="50" width="400" height="44" rx="18" class="a-bar" />
+            <rect x="40" y="76" width="400" height="18" class="a-bar" />
+            <circle cx="68" cy="72" r="6" class="a-dot1" />
+            <circle cx="88" cy="72" r="6" class="a-dot2" />
+            <circle cx="108" cy="72" r="6" class="a-dot3" />
+            <rect x="140" y="63" width="200" height="18" rx="9" class="a-url" />
+            <!-- Code lines -->
+            <rect x="68" y="122" width="70" height="10" rx="5" class="a-c1" />
+            <rect x="146" y="122" width="110" height="10" rx="5" class="a-c2" />
+            <rect x="88" y="146" width="130" height="10" rx="5" class="a-c3" />
+            <rect x="88" y="170" width="90" height="10" rx="5" class="a-c2" />
+            <rect x="186" y="170" width="60" height="10" rx="5" class="a-c1" />
+            <rect x="88" y="194" width="150" height="10" rx="5" class="a-c3" />
+            <rect x="68" y="218" width="40" height="10" rx="5" class="a-c1" />
+            <rect x="68" y="250" width="100" height="10" rx="5" class="a-c2" />
+            <rect x="88" y="274" width="120" height="10" rx="5" class="a-c3" />
+            <!-- Chart card -->
+            <rect x="282" y="118" width="134" height="150" rx="14" class="a-card" />
+            <rect x="302" y="206" width="16" height="44" rx="4" class="a-b1" />
+            <rect x="326" y="180" width="16" height="70" rx="4" class="a-b2" />
+            <rect x="350" y="194" width="16" height="56" rx="4" class="a-b1" />
+            <rect x="374" y="150" width="16" height="100" rx="4" class="a-b3" />
+            <rect x="302" y="136" width="60" height="8" rx="4" class="a-c3" />
+            <!-- Floating terminal card -->
+            <g class="float-1">
+              <rect x="330" y="270" width="160" height="96" rx="16" class="a-term" />
+              <path d="M352 300l14 12-14 12" class="a-term-line" />
+              <rect x="376" y="320" width="40" height="6" rx="3" class="a-term-text" />
+              <rect x="352" y="340" width="110" height="6" rx="3" class="a-term-dim" />
+            </g>
+            <!-- Floating database badge -->
+            <g class="float-2">
+              <circle cx="60" cy="330" r="44" class="a-badge" />
+              <ellipse cx="60" cy="314" rx="20" ry="7" class="a-db" />
+              <path d="M40 314v32c0 4 9 7 20 7s20-3 20-7v-32" class="a-db" />
+              <path d="M40 330c0 4 9 7 20 7s20-3 20-7" class="a-db" />
+            </g>
+            <!-- Floating AI spark -->
+            <g class="float-3">
+              <circle cx="460" cy="70" r="34" class="a-badge" />
+              <path d="M460 50l5 14 14 6-14 6-5 14-5-14-14-6 14-6z" class="a-spark" />
+            </g>
           </svg>
         </div>
       </div>
 
-      <div class="hero-content">
-        <p class="eyebrow">Software Developer</p>
-        <h1 class="hero-title">Demitries Baskhara</h1>
-        <p class="hero-tagline">
-          <span class="text-gradient">Python · Full-Stack Web · AI Integration</span>
-        </p>
-        <p class="hero-summary">
-          Developer with an Informatics Engineering background, building web applications backed by solid
-          database design.
-          I focus on software that is fast, reliable and easy for people to use, from data models to
-          the interface.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View projects</a>
-          <a href="https://www.linkedin.com/in/demitries-baskhara-632bb5268" class="btn btn-secondary"
-            target="_blank" rel="noopener">LinkedIn</a>
-        </div>
+      <div class="container">
+        <ul class="stats">
+          <li><strong>3</strong><span>Featured projects</span></li>
+          <li><strong>UPN</strong><span>Informatics Engineering</span></li>
+          <li><strong>Python</strong><span>Primary language</span></li>
+        </ul>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-          <div class="card">
-            <h3 class="card-title">Languages</h3>
-            <ul class="chips">
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>SQL</li>
-              <li>HTML &amp; CSS</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Web Development</h3>
-            <ul class="chips">
-              <li>Full-stack applications</li>
-              <li>Front-end interfaces</li>
-              <li>Back-end logic</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Data</h3>
-            <ul class="chips">
-              <li>Relational databases</li>
-              <li>Data modeling</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Systems &amp; AI</h3>
-            <ul class="chips">
-              <li>System architecture</li>
-              <li>AI integration</li>
-            </ul>
-          </div>
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container services-grid">
+        <div class="services-intro">
+          <h2 class="section-title"><span>What I</span> <span class="accent">Do Best</span></h2>
+          <p class="muted">
+            These are the three areas I focus on, from the database underneath to the features people use.
+          </p>
+          <a href="#projects" class="btn btn-small">See my work</a>
+        </div>
+
+        <div class="services-cards">
+          <article class="card service service-tall">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4M9 8l-2 2 2 2M15 8l2 2-2 2" />
+              </svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>Full-stack web applications, from back-end logic to clean, responsive interfaces.</p>
+          </article>
+
+          <article class="card service">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="8" ry="3" />
+                <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" />
+                <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" />
+              </svg>
+            </div>
+            <h3>Database Design</h3>
+            <p>Relational data models that keep large amounts of information organized and fast to query.</p>
+          </article>
+
+          <article class="card service">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" />
+                <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+              </svg>
+            </div>
+            <h3>AI Integration</h3>
+            <p>Python-based AI modules added to existing systems to spot trends and automate decisions.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section">
+    <section id="projects" class="section section-tinted">
       <div class="container">
-        <h2 class="section-title">Selected Projects</h2>
+        <h2 class="section-title"><span>Featured</span> <span class="accent">Projects</span></h2>
         <div class="projects-grid">
           <article class="card project">
-            <h3 class="card-title">Car Dealer Catalog</h3>
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 17h14M6 17l1.5-5h9L18 17M7.5 12L9 8h6l1.5 4" />
+                <circle cx="8" cy="18" r="1.5" />
+                <circle cx="16" cy="18" r="1.5" />
+              </svg>
+            </div>
+            <h3>Car Dealer Catalog</h3>
             <ul class="tags">
               <li>Web</li>
               <li>Database</li>
             </ul>
-            <p>
-              A digital showroom for car dealers. It organizes a large vehicle inventory and gives buyers
-              clear, structured details for every car on sale.
-            </p>
+            <p>A digital showroom for car dealers. It organizes a large vehicle inventory and gives buyers clear,
+              structured details for every car on sale.</p>
           </article>
 
           <article class="card project">
-            <h3 class="card-title">Smart Survey System</h3>
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="5" y="3" width="14" height="18" rx="2" />
+                <path d="M9 8h6M9 12h6M9 16h3" />
+              </svg>
+            </div>
+            <h3>Smart Survey System</h3>
             <ul class="tags">
               <li>Python</li>
               <li>Full-Stack</li>
             </ul>
-            <p>
-              An adaptive survey engine. Rule-based logic changes the follow-up questions in real time
-              based on each respondent's previous answers.
-            </p>
+            <p>An adaptive survey engine. Rule-based logic changes the follow-up questions in real time based on each
+              respondent's previous answers.</p>
           </article>
 
           <article class="card project">
-            <h3 class="card-title">AI Assistant Module</h3>
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="7" width="16" height="12" rx="3" />
+                <path d="M12 3v4M9 12h.01M15 12h.01M9 16h6" />
+              </svg>
+            </div>
+            <h3>AI Assistant Module</h3>
             <ul class="tags">
               <li>Python</li>
               <li>AI Integration</li>
             </ul>
-            <p>
-              An AI assistant built into an existing business system. It reads incoming data, highlights
-              important trends and automates routine decisions.
-            </p>
+            <p>An AI assistant built into an existing business system. It reads incoming data, highlights important
+              trends and automates routine decisions.</p>
           </article>
         </div>
       </div>
@@ -162,19 +247,28 @@
     <!-- Education -->
     <section id="education" class="section">
       <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="card timeline-item">
-          <div class="timeline-head">
-            <div>
-              <h3 class="card-title">Informatics Engineering</h3>
-              <p class="muted">UPN (Universitas Pembangunan Nasional)</p>
-            </div>
-            <span class="date">Class of 2018</span>
+        <h2 class="section-title"><span>My</span> <span class="accent">Education</span></h2>
+        <div class="card edu">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 9L12 4 2 9l10 5 10-5z" />
+              <path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" />
+            </svg>
           </div>
-          <ul class="bullets">
-            <li>Focus on Python, full-stack web development and databases.</li>
-            <li>Coursework in software engineering and system architecture.</li>
-          </ul>
+          <div class="edu-body">
+            <div class="edu-head">
+              <div>
+                <h3>Informatics Engineering</h3>
+                <p class="muted">UPN (Universitas Pembangunan Nasional)</p>
+              </div>
+              <span class="pill">Class of 2018</span>
+            </div>
+            <ul class="bullets">
+              <li>Focus on Python, full-stack web development and databases.</li>
+              <li>Coursework in software engineering and system architecture.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -182,20 +276,23 @@
     <!-- Contact -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="card contact-card">
-          <h2 class="section-title">Let's work together</h2>
-          <p class="muted">
-            Open to developer roles and freelance projects. The best way to reach me is on LinkedIn.
-          </p>
-          <a href="https://www.linkedin.com/in/demitries-baskhara-632bb5268" class="btn btn-primary"
-            target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <div class="contact-banner">
+          <div>
+            <h2>Let's work together</h2>
+            <p>Open to developer roles and freelance projects. The best way to reach me is on LinkedIn.</p>
+          </div>
+          <a href="https://www.linkedin.com/in/demitries-baskhara-632bb5268" class="btn btn-light" target="_blank"
+            rel="noopener">Connect on LinkedIn</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Demitries Baskhara</p>
+    <div class="container footer-inner">
+      <span class="logo logo-small">DB</span>
+      <p>© 2026 Demitries Baskhara</p>
+    </div>
   </footer>
 
   <script type="module" src="/src/main.js"></script>
