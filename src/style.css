@@ -342,10 +342,6 @@ main {
   grid-column: span 5;
 }
 
-.artifact-full {
-  grid-column: span 12;
-}
-
 .artifact-frame {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -360,10 +356,6 @@ main {
 
 .artifact-wide .artifact-frame {
   aspect-ratio: 16 / 10;
-}
-
-.artifact-full .artifact-frame {
-  aspect-ratio: 21 / 8;
 }
 
 .artifact-art {
@@ -617,15 +609,13 @@ main {
 
   .artifact,
   .artifact-wide,
-  .artifact-tall,
-  .artifact-full {
+  .artifact-tall {
     grid-column: auto;
     margin-top: 0 !important;
   }
 
   .artifact-tall .artifact-frame,
-  .artifact-wide .artifact-frame,
-  .artifact-full .artifact-frame {
+  .artifact-wide .artifact-frame {
     aspect-ratio: 4 / 3;
   }
 }
@@ -635,8 +625,11 @@ main {
     --chrome-pad: 12px;
   }
 
+  /* Only the side padding: the shorthand would wipe the vertical
+     spacing of .masthead, .section and .eof on phones. */
   .column {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .statement p,
