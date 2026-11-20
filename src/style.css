@@ -342,6 +342,10 @@ main {
   grid-column: span 5;
 }
 
+.artifact-full {
+  grid-column: span 12;
+}
+
 .artifact-frame {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -356,6 +360,10 @@ main {
 
 .artifact-wide .artifact-frame {
   aspect-ratio: 16 / 10;
+}
+
+.artifact-full .artifact-frame {
+  aspect-ratio: 21 / 8;
 }
 
 .artifact-art {
@@ -609,13 +617,15 @@ main {
 
   .artifact,
   .artifact-wide,
-  .artifact-tall {
+  .artifact-tall,
+  .artifact-full {
     grid-column: auto;
     margin-top: 0 !important;
   }
 
   .artifact-tall .artifact-frame,
-  .artifact-wide .artifact-frame {
+  .artifact-wide .artifact-frame,
+  .artifact-full .artifact-frame {
     aspect-ratio: 4 / 3;
   }
 }
