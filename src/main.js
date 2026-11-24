@@ -46,7 +46,7 @@ const dimParagraphs = () => {
     const r = p.getBoundingClientRect();
     const center = r.top + r.height / 2;
     const distance = Math.max(0, Math.abs(center - focus) - r.height / 2);
-    const opacity = 1 - Math.min(distance / (vh * 0.35), 1) * 0.72;
+    const opacity = 1 - Math.min(distance / (vh * 0.35), 1) * 0.45;
     p.style.opacity = opacity.toFixed(3);
   });
 };

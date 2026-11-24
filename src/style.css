@@ -229,8 +229,8 @@ main {
    Masthead
    ========================================================================== */
 .masthead {
-  padding-top: 13vh;
-  padding-bottom: 16vh;
+  padding-top: 11vh;
+  padding-bottom: 14vh;
 }
 
 .logo {
@@ -253,6 +253,104 @@ main {
   color: #e9e5e6;
 }
 
+.masthead-tagline {
+  margin-top: 28px;
+  max-width: 19ch;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 5.2vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--fg);
+  text-wrap: balance;
+}
+
+.masthead-tagline .u {
+  border-bottom: 0;
+  color: var(--rust);
+}
+
+.masthead-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border: 1px solid var(--fg-20);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--fg-80);
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.cta-arrow {
+  color: var(--green);
+  transition: transform 0.25s var(--ease);
+}
+
+.cta:hover {
+  color: var(--fg);
+  border-color: var(--fg-40);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+.cta-primary {
+  border-color: var(--rust);
+  color: var(--fg);
+}
+
+.cta-primary .cta-arrow {
+  color: var(--rust);
+}
+
+.cta-primary:hover {
+  background: rgba(200, 74, 45, 0.14);
+  border-color: var(--rust);
+}
+
+.masthead-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 26px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--fg-60);
+}
+
+.masthead-meta-dot {
+  color: var(--fg-40);
+}
+
+.masthead-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--fg-80);
+}
+
+.masthead-open i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: breathe 2.4s ease-in-out infinite;
+}
+
 /* ==========================================================================
    Sections
    ========================================================================== */
@@ -268,7 +366,7 @@ main {
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: var(--fg-40);
+  color: var(--fg-60);
   margin-bottom: 32px;
 }
 
@@ -390,7 +488,18 @@ main {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: var(--fg-60);
+  color: var(--fg-80);
+}
+
+.artifact-go {
+  margin-left: 10px;
+  color: var(--fg-40);
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.artifact:hover .artifact-go {
+  color: var(--green);
 }
 
 .artifact-caption span {
@@ -538,7 +647,40 @@ main {
 
 .role-body {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.68;
+  color: var(--fg-80);
+}
+
+.role-body p + p {
+  margin-top: 1em;
+  color: var(--fg-60);
+}
+
+.role-notes {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--fg-60);
+}
+
+.role-notes li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.role-notes li::before {
+  content: '›';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: var(--green);
+}
+
+.role:hover .role-notes {
   color: var(--fg-80);
 }
 
@@ -550,7 +692,7 @@ main {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.08em;
-  color: var(--fg-40);
+  color: var(--fg-60);
 }
 
 .role:hover .role-title {
@@ -637,6 +779,24 @@ main {
     font-size: 18px;
   }
 
+  .masthead-tagline {
+    max-width: none;
+  }
+
+  .cta {
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+
+  .masthead-meta {
+    gap: 6px 14px;
+  }
+
+  /* A wrapped line would otherwise end on a dangling separator. */
+  .masthead-meta-dot {
+    display: none;
+  }
+
   .section-label {
     font-size: 11px;
   }
@@ -687,6 +847,7 @@ main {
   .rails,
   .fade,
   #artifacts,
+  .masthead-actions,
   .mark {
     display: none !important;
   }
@@ -703,6 +864,21 @@ main {
 
   .logo-word {
     color: #111;
+  }
+
+  .masthead-tagline {
+    font-size: 18px;
+    max-width: none;
+    margin-top: 10px;
+  }
+
+  .masthead-meta {
+    margin-top: 10px;
+  }
+
+  .role-notes {
+    margin-top: 10px;
+    font-size: 11px;
   }
 
   .section,
